@@ -1,3 +1,3 @@
 ADD_EXECUTABLE(polyspiral Main.cpp MainWin.cpp)
-INSTALL(TARGETS polyspiral DESTINATION /bin)
+INSTALL(TARGETS polyspiral DESTINATION bin)
 

@@ -1,3 +1,20 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2)
+
+set(SIMGE_INCLUDE_ROOT "/usr/include" CACHE FILEPATH "Simge include root")
+
+if(NOT EXISTS "${SIMGE_INCLUDE_ROOT}/simge/glut/Window.hpp")
+    message(SEND_ERROR "Can't find Window.hpp in ${SIMGE_INCLUDE_ROOT}/simge/glut")
+endif()
+
+set(SIMGE_LIB_ROOT "/usr/lib" CACHE FILEPATH "Simge library root")
+
+if(NOT EXISTS "${SIMGE_LIB_ROOT}/libsimge.a")
+    message(SEND_ERROR "Can't find libsimge.a in ${SIMGE_LIB_ROOT}")
+endif()
+
+LINK_DIRECTORIES(${SIMGE_LIB_ROOT})
+INCLUDE_DIRECTORIES(${SIMGE_INCLUDE_ROOT})
+
 LINK_LIBRARIES(simge glut GLU GL)
 ADD_SUBDIRECTORY(gingerbread)
 ADD_SUBDIRECTORY(hailstone)

@@ -1,3 +1,3 @@
 ADD_EXECUTABLE(hook Main.cpp MainWin.cpp)
-INSTALL(TARGETS hook DESTINATION /bin)
+INSTALL(TARGETS hook DESTINATION bin)
 
